@@ -800,6 +800,7 @@ class HandlerTest(BaseTest):
 
             support.wait_process(pid, exitcode=0)
 
+    @unittest.skipIf(support.is_wasi or support.MS_WINDOWS, "Platform does not support symlinks.")
     def test_135683(self):
         # See gh-135683
 
